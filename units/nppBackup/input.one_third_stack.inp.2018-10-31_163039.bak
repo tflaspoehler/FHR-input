@@ -1,7 +1,7 @@
 unit 500
   com='1/3 assembly w/ stack of plates'
 '---fuel stack outer boundary---
-  ppiped 1 22.5166605 23.1 550.02976 30 0 0  rotate a1=-60 origin x=-23.6713610367747 y=-2
+  ppiped 1 22.5166605 23.1 34.37686 30 0 0  rotate a1=-60 origin x=-23.6713610367747 y=-2
 '---stack of fuel plates with 5 axial regions---
   array 500 1 place 1 1 1 0 0 0
   boundary 1

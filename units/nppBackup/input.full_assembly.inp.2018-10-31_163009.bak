@@ -80,7 +80,7 @@ unit 23
   media 31 1 4 -3 9
 '---Y-Shape Control Blade Slot---
   media 31 1 5 -3 -4 9
- hole 100 origin z=60
- hole 101 origin z=60 rotate a1=120
- hole 102 origin z=60 rotate a1=-120
+ hole 100
+ hole 101 rotate a1=120
+ hole 102 rotate a1=-120
   boundary 2

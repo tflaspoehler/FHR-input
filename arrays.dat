@@ -1,13 +1,99 @@
-ara=7 nux=1 nuy=13 nuz=1 prt=no typ=square fill 8 2 9 3 10 4 11 5 12 6 13 7 14 end fill
-ara=8 nux=1 nuy=13 nuz=1 prt=no typ=square fill 8 17 9 18 10 19 11 20 12 21 13 22 14 end fill
-ara=9 nux=1 nuy=13 nuz=1 prt=no typ=square fill 8 25 9 26 10 27 11 28 12 29 13 30 14 end fill
 ara=1 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R1 end fill
-ara=2 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R16 end fill
-ara=3 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R24 end fill
-ara=10 nux=1 nuy=13 nuz=1 prt=no typ=square fill 40 34 41 35 42 36 43 37 44 38 45 39 46 end fill
-ara=11 nux=1 nuy=13 nuz=1 prt=no typ=square fill 40 49 41 50 42 51 43 52 44 53 45 54 46 end fill
-ara=12 nux=1 nuy=13 nuz=1 prt=no typ=square fill 40 57 41 58 42 59 43 60 44 61 45 62 46 end fill
-ara=4 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R33 end fill
-ara=5 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R48 end fill
-ara=6 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R56 end fill
-ara=1000 nux=1 nuy=1 nuz=16 prt=no typ=rhexagonal fill 32 32 32 32 32 32 32 32 64 64 64 64 64 64 64 64  end fill
+ara=2 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R15 end fill
+ara=3 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R29 end fill
+ara=4 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R43 end fill
+ara=5 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R57 end fill
+ara=6 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R71 end fill
+ara=7 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R85 end fill
+ara=8 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R99 end fill
+ara=9 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R113 end fill
+ara=10 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R127 end fill
+ara=11 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R141 end fill
+ara=12 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R155 end fill
+ara=13 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R169 end fill
+ara=14 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R183 end fill
+ara=15 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R197 end fill
+ara=16 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R211 end fill
+ara=17 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R226 end fill
+ara=18 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R233 end fill
+ara=19 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R240 end fill
+ara=20 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R247 end fill
+ara=21 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R254 end fill
+ara=22 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R261 end fill
+ara=23 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R268 end fill
+ara=24 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R275 end fill
+ara=25 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R282 end fill
+ara=26 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R289 end fill
+ara=27 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R296 end fill
+ara=28 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R303 end fill
+ara=29 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R310 end fill
+ara=30 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R317 end fill
+ara=31 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R324 end fill
+ara=32 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R331 end fill
+ara=33 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R339 end fill
+ara=34 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R346 end fill
+ara=35 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R353 end fill
+ara=36 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R360 end fill
+ara=37 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R367 end fill
+ara=38 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R374 end fill
+ara=39 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R381 end fill
+ara=40 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R388 end fill
+ara=41 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R395 end fill
+ara=42 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R402 end fill
+ara=43 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R409 end fill
+ara=44 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R416 end fill
+ara=45 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R423 end fill
+ara=46 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R430 end fill
+ara=47 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R437 end fill
+ara=48 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R444 end fill
+ara=49 nux=1 nuy=13 nuz=16 prt=no typ=square fill 
+     8 2 9 3 10 4 11 5 12 6 13 7 14
+     22 16 23 17 24 18 25 19 26 20 27 21 28
+     36 30 37 31 38 32 39 33 40 34 41 35 42
+     50 44 51 45 52 46 53 47 54 48 55 49 56
+     64 58 65 59 66 60 67 61 68 62 69 63 70
+     78 72 79 73 80 74 81 75 82 76 83 77 84
+     92 86 93 87 94 88 95 89 96 90 97 91 98
+     106 100 107 101 108 102 109 103 110 104 111 105 112
+     120 114 121 115 122 116 123 117 124 118 125 119 126
+     134 128 135 129 136 130 137 131 138 132 139 133 140
+     148 142 149 143 150 144 151 145 152 146 153 147 154
+     162 156 163 157 164 158 165 159 166 160 167 161 168
+     176 170 177 171 178 172 179 173 180 174 181 175 182
+     190 184 191 185 192 186 193 187 194 188 195 189 196
+     204 198 205 199 206 200 207 201 208 202 209 203 210
+     218 212 219 213 220 214 221 215 222 216 223 217 224 end fill
+ara=50 nux=1 nuy=13 nuz=16 prt=no typ=square fill 
+     8 227 9 228 10 229 11 230 12 231 13 232 14
+     22 234 23 235 24 236 25 237 26 238 27 239 28
+     36 241 37 242 38 243 39 244 40 245 41 246 42
+     50 248 51 249 52 250 53 251 54 252 55 253 56
+     64 255 65 256 66 257 67 258 68 259 69 260 70
+     78 262 79 263 80 264 81 265 82 266 83 267 84
+     92 269 93 270 94 271 95 272 96 273 97 274 98
+     106 276 107 277 108 278 109 279 110 280 111 281 112
+     120 283 121 284 122 285 123 286 124 287 125 288 126
+     134 290 135 291 136 292 137 293 138 294 139 295 140
+     148 297 149 298 150 299 151 300 152 301 153 302 154
+     162 304 163 305 164 306 165 307 166 308 167 309 168
+     176 311 177 312 178 313 179 314 180 315 181 316 182
+     190 318 191 319 192 320 193 321 194 322 195 323 196
+     204 325 205 326 206 327 207 328 208 329 209 330 210
+     218 332 219 333 220 334 221 335 222 336 223 337 224 end fill
+ara=51 nux=1 nuy=13 nuz=16 prt=no typ=square fill 
+     8 340 9 341 10 342 11 343 12 344 13 345 14
+     22 347 23 348 24 349 25 350 26 351 27 352 28
+     36 354 37 355 38 356 39 357 40 358 41 359 42
+     50 361 51 362 52 363 53 364 54 365 55 366 56
+     64 368 65 369 66 370 67 371 68 372 69 373 70
+     78 375 79 376 80 377 81 378 82 379 83 380 84
+     92 382 93 383 94 384 95 385 96 386 97 387 98
+     106 389 107 390 108 391 109 392 110 393 111 394 112
+     120 396 121 397 122 398 123 399 124 400 125 401 126
+     134 403 135 404 136 405 137 406 138 407 139 408 140
+     148 410 149 411 150 412 151 413 152 414 153 415 154
+     162 417 163 418 164 419 165 420 166 421 167 422 168
+     176 424 177 425 178 426 179 427 180 428 181 429 182
+     190 431 191 432 192 433 193 434 194 435 195 436 196
+     204 438 205 439 206 440 207 441 208 442 209 443 210
+     218 445 219 446 220 447 221 448 222 449 223 450 224 end fill
