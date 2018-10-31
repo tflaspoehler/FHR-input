@@ -1,0 +1,28 @@
+'============================================================================
+unit 201
+  com='TRISO particle in MATRIX'
+'---TRISO matrix lattice boundary---
+  cuboid 1 0.04703 -0.04703 0.04564 -0.04564 0.04633 -0.04633 
+'---kernel radius---
+  sphere 2 0.02135
+'---buffer radius---
+  sphere 3 0.03135
+'---inner pyrocarbon radius---
+  sphere 4 0.03485
+'---silicon carbide radius---
+  sphere 5 0.03835
+'---outer pyrocarbon radius---
+  sphere 6 0.04235
+'---kernel radius---
+  media 101 1 2
+'---buffer radius---
+  media 20 1 3 -2
+'---inner pyrocarbon radius---
+  media 21 1 4 -3
+'---silicon carbide radius---
+  media 4 1 5 -4
+'---outer pyrocarbon radius---
+  media 22 1 6 -5
+'---graphite matrix---
+  media 23 1 1 -6
+  boundary 1
