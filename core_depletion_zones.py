@@ -10,15 +10,15 @@ class core_class():
         a_file = open("arrays.dat", "w")
         output_file = open(output, "w")
         
-        self.triso          = scale_unit_class(open("input.triso.inp", "r").readlines())
-        self.plates         =  multiple_scale_units("input.plates.inp")
-        self.channels       =  multiple_scale_units("input.channels.inp")
-        self.third_stack    = scale_unit_class(open("input.one_third_stack.inp", "r").readlines())
-        self.assembly       = scale_unit_class(open("input.fuel_assembly.inp", "r").readlines())
-        self.axial_assembly = scale_unit_class(open("input.full_assembly.inp", "r").readlines())
+        self.triso          = scale_unit_class(open("units/input.triso.inp", "r").readlines())
+        self.plates         =  multiple_scale_units("units/input.plates.inp")
+        self.channels       =  multiple_scale_units("units/input.channels.inp")
+        self.third_stack    = scale_unit_class(open("units/input.one_third_stack.inp", "r").readlines())
+        self.assembly       = scale_unit_class(open("units/input.fuel_assembly.inp", "r").readlines())
+        self.axial_assembly = scale_unit_class(open("units/input.full_assembly.inp", "r").readlines())
         
-        self.material    = [i.replace('\n','').replace('\r','').replace('\t','') for i in open("input.material.inp", "r").readlines()]
-        self.core_material    = open("input.core_materials.inp", "r").readlines()
+        self.material    = [i.replace('\n','').replace('\r','').replace('\t','') for i in open("units/input.material.inp", "r").readlines()]
+        self.core_material    = open("units/input.core_materials.inp", "r").readlines()
                 
         u = 1
         m = 101
@@ -124,7 +124,7 @@ class core_class():
             a_file.write(" ".join([repr(level) for i in range(0, n_z_total/n_z)]) + " ")
         a_file.write(" end fill\n")
         a_file.close()
-        m_file = open("material.out","w")
+        m_file = open("materials.dat","w")
         for i in range(0, m):
             for line in self.material:
                 m_file.write(line.split()[0] + " " + repr(i+101) + " " + " ".join(line.split()[2:]) +'\n')
@@ -133,7 +133,7 @@ class core_class():
         m_file.close()
         output_file.close()
         
-        material = open("material.out", "r").readlines()
+        material = open("materials.dat", "r").readlines()
         geometry = open(output, "r").readlines()
         arrayeds = open("arrays.dat", "r").readlines()
         
@@ -185,5 +185,5 @@ output_file = "NEW_ASSEMBLY.inp"
 ## core = core_class(tritants=3, planks=6, stripes=2, sections=5)
 
 ## core = core_class(output=output_file, tritants=3, planks=6, stripes=2, sections=5)
-axial_assembly = core_class(output="2d_test_case.inp", tritants=3, planks=1, stripes=1, sections=1, axials=2)
+axial_assembly = core_class(output="core.inp", tritants=3, planks=1, stripes=1, sections=1, axials=2)
 

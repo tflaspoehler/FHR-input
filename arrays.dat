@@ -1,7 +1,13 @@
-ara=4 nux=1 nuy=13 nuz=1 prt=no typ=square fill 8 2 9 3 10 4 11 5 12 6 13 7 14 end fill
-ara=5 nux=1 nuy=13 nuz=1 prt=no typ=square fill 8 17 9 18 10 19 11 20 12 21 13 22 14 end fill
-ara=6 nux=1 nuy=13 nuz=1 prt=no typ=square fill 8 25 9 26 10 27 11 28 12 29 13 30 14 end fill
+ara=7 nux=1 nuy=13 nuz=1 prt=no typ=square fill 8 2 9 3 10 4 11 5 12 6 13 7 14 end fill
+ara=8 nux=1 nuy=13 nuz=1 prt=no typ=square fill 8 17 9 18 10 19 11 20 12 21 13 22 14 end fill
+ara=9 nux=1 nuy=13 nuz=1 prt=no typ=square fill 8 25 9 26 10 27 11 28 12 29 13 30 14 end fill
 ara=1 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R1 end fill
 ara=2 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R16 end fill
 ara=3 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R24 end fill
-ara=1000 nux=1 nuy=1 nuz=16 prt=no typ=rhexagonal fill 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32  end fill
+ara=10 nux=1 nuy=13 nuz=1 prt=no typ=square fill 40 34 41 35 42 36 43 37 44 38 45 39 46 end fill
+ara=11 nux=1 nuy=13 nuz=1 prt=no typ=square fill 40 49 41 50 42 51 43 52 44 53 45 54 46 end fill
+ara=12 nux=1 nuy=13 nuz=1 prt=no typ=square fill 40 57 41 58 42 59 43 60 44 61 45 62 46 end fill
+ara=4 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R33 end fill
+ara=5 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R48 end fill
+ara=6 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R56 end fill
+ara=1000 nux=1 nuy=1 nuz=16 prt=no typ=rhexagonal fill 32 32 32 32 32 32 32 32 64 64 64 64 64 64 64 64  end fill
