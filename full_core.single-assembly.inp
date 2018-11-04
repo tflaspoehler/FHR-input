@@ -1,0 +1,521 @@
+=csas6
+FHR
+ce_v7.1_endf
+read composition
+' ==============================================
+' ---- Kernel 9%w 
+u-235 101 0 2.2368100559E-03 1111 end
+u-238 101 0 2.2616635040E-02 1111 end
+o-16 101 0 3.2589564615E-02 1111 end
+c 101 0 1.1090927722E-02 1111 end
+' ==============================================
+' ---- Graphite in the plates
+ graphite    20 den=1.00 1       1111 end
+ graphite    21 den=1.90 1       1111 end
+ graphite    22 den=1.87 1       1111 end
+ graphite    23 den=1.75 1       1111 end
+ graphite    24 den=1.75 1       1111 end
+ graphite    25 den=1.75 1       600.00 end
+ graphite    26 den=1.75 1      1083.29 end
+ graphite    27 den=1.75 1      1041.00 end
+' ==============================================
+' --- SiC: Isotopic comp for natural Si,  @1200 K 
+ si-28       4 0  4.432375480E-02 1111 end
+ si-29       4 0  2.251681150E-03 1111 end
+ si-30       4 0  1.486061500E-03 1111 end
+ c           4 0  4.806149742E-02 1111 end
+' ==============================================
+' --- FLiBe, rho = 2.413 - 0.000488 T[k], enrichment 99.995% in Li-7
+ li-6        50 0 1.383229190E-06 949 end
+ li-7        50 0 2.371685710E-02 949 end
+ be-9        50 0 1.185912017E-02 949 end
+ f-19        50 0 4.743648067E-02 949 end
+' ---
+ li-6        51 0 1.3918798874E-06 1083.29 end
+ li-7        51 0 2.3865182017E-02 1083.29 end
+ be-9        51 0 1.1933286954E-02 1083.29 end
+ f-19        51 0 4.7733147805E-02 1083.29 end
+' ==============================================
+' --- Burnable poison, Eu2O3            
+ eu-151       8 0 8.181202072E-03  1111 end
+ eu-153       8 0 8.930703538E-03  1111 end
+ o-16         8 0 2.566785841E-02  1111 end
+' ==============================================
+' --- Graphite at 900 K
+ graphite     90 den=1.95 1 949 end
+ graphite     91 den=1.95 1 1083.29 end
+' ==============================================
+' --- Control blade
+ c           11 0 5.158967334e-4 600.0 end
+ hf-174      11 0 6.659530024e-7 600.0 end
+ hf-176      11 0 2.189320495e-5 600.0 end
+ hf-177      11 0 7.741703653e-5 600.0 end
+ hf-178      11 0 1.135449869e-4 600.0 end
+ hf-179      11 0 5.668924933e-5 600.0 end
+ hf-180      11 0 1.460101958e-4 600.0 end
+ mo-92       11 0 9.252040149e-3 600.0 end
+ mo-94       11 0 5.826301925e-3 600.0 end
+ mo-95       11 0 1.008618830e-2 600.0 end
+ mo-96       11 0 1.061469438e-2 600.0 end
+ mo-97       11 0 6.112841393e-3 600.0 end
+ mo-98       11 0 1.553043766e-2 600.0 end
+ mo-100      11 0 6.252927341e-3 600.0 end
+' ==============================================
+' --- SiC: Isotopic comp for natural Si,  @1200 K 
+ si-28       19 0 4.2938675848E-02 1200.0 end
+ si-29       19 0 2.1813180641E-03 1200.0 end
+ si-30       19 0 1.4396233651E-03 1200.0 end
+ c           19 0 4.6559617248E-02 1200.0 end  
+' ==============================================
+' --- Upper support plate-homogenized material. 
+' In volume 57% SiC-SiC composite, 43% FLiBe
+ si-28       30 0 2.2034355340E-02 600.0 end
+ si-29       30 0 1.1193623583E-03 600.0 end
+ si-30       30 0 7.3875526399E-04 600.0 end
+ c           30 0 2.3892472962E-02 600.0 end
+ f-19        30 0 2.0599024332E-02 600.0 end
+ li-6        30 0 6.0065947809E-07 600.0 end
+ li-7        30 0 1.0298911501E-02 600.0 end
+ be-9        30 0 5.1497560747E-03 600.0 end
+' ---
+ si-28       31 0 2.2034355340E-02 949 end
+ si-29       31 0 1.1193623583E-03 949 end
+ si-30       31 0 7.3875526399E-04 949 end
+ c           31 0 2.3892472962E-02 949 end
+ f-19        31 0 2.0599024332E-02 949 end
+ li-6        31 0 6.0065947809E-07 949 end
+ li-7        31 0 1.0298911501E-02 949 end
+ be-9        31 0 5.1497560747E-03 949 end
+' ==============================================
+end composition
+read parameters
+nsk=50
+gen=250
+npg=100000
+flx=yes
+end parameters
+read geometry
+'============================================================================
+unit 1
+  com='TRISO particle in MATRIX'
+'---TRISO matrix lattice boundary---
+  cuboid 1 0.04703 -0.04703 0.04564 -0.04564 0.04633 -0.04633 
+'---kernel radius---
+  sphere 2 0.02135
+'---buffer radius---
+  sphere 3 0.03135
+'---inner pyrocarbon radius---
+  sphere 4 0.03485
+'---silicon carbide radius---
+  sphere 5 0.03835
+'---outer pyrocarbon radius---
+  sphere 6 0.04235
+'---kernel radius---
+  media 101 1 2
+'---buffer radius---
+  media 20 1 3 -2
+'---inner pyrocarbon radius---
+  media 21 1 4 -3
+'---silicon carbide radius---
+  media 4 1 5 -4
+'---outer pyrocarbon radius---
+  media 22 1 6 -5
+'---graphite matrix---
+  media 23 1 1 -6
+  boundary 1
+unit 2
+  com='full-plate 1'
+'---full-plate 1 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -18.6 -21.15 34.37686 0 
+'---graphite meat---
+  media 24 1 1 -2 -3
+'---plate 1 bottom---
+  cuboid 2 9.49538 -9.49538 0.36183 0.00329 34.37288 0.00398  origin x=-1.12283840895508 y=-21.05
+'---plate 1 top---
+  cuboid 3 9.49538 -9.49538 0.36183 0.00329 34.37288 0.00398  origin x=-2.26880941126418 y=-19.06512
+  media 101 1 2
+  media 101 1 3
+  boundary 1
+'============================================================================
+unit 3
+  com='full-plate 2'
+'---full-plate 2 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -15.35 -17.9 34.37686 0 
+'---graphite meat---
+  media 24 1 1 -2 -3
+'---plate 2 bottom---
+  cuboid 2 9.49538 -9.49538 0.36183 0.00329 34.37288 0.00398  origin x=-2.99922678382136 y=-17.8
+'---plate 2 top---
+  cuboid 3 9.49538 -9.49538 0.36183 0.00329 34.37288 0.00398  origin x=-4.14519778613047 y=-15.81512
+  media 101 1 2
+  media 101 1 3
+  boundary 1
+'============================================================================
+unit 4
+  com='full-plate 3'
+'---full-plate 3 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -12.1 -14.65 34.37686 0 
+'---graphite meat---
+  media 24 1 1 -2 -3
+'---plate 3 bottom---
+  cuboid 2 9.49538 -9.49538 0.36183 0.00329 34.37288 0.00398  origin x=-4.87561515868765 y=-14.55
+'---plate 3 top---
+  cuboid 3 9.49538 -9.49538 0.36183 0.00329 34.37288 0.00398  origin x=-6.02158616099675 y=-12.56512
+  media 101 1 2
+  media 101 1 3
+  boundary 1
+'============================================================================
+unit 5
+  com='full-plate 4'
+'---full-plate 4 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -8.85 -11.4 34.37686 0 
+'---graphite meat---
+  media 24 1 1 -2 -3
+'---plate 4 bottom---
+  cuboid 2 9.49538 -9.49538 0.36183 0.00329 34.37288 0.00398  origin x=-6.75200353355393 y=-11.3
+'---plate 4 top---
+  cuboid 3 9.49538 -9.49538 0.36183 0.00329 34.37288 0.00398  origin x=-7.89797453586303 y=-9.31512
+  media 101 1 2
+  media 101 1 3
+  boundary 1
+'============================================================================
+unit 6
+  com='full-plate 5'
+'---full-plate 5 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -5.6 -8.15 34.37686 0 
+'---graphite meat---
+  media 24 1 1 -2 -3
+'---plate 5 bottom---
+  cuboid 2 9.49538 -9.49538 0.36183 0.00329 34.37288 0.00398  origin x=-8.62839190842021 y=-8.05
+'---plate 5 top---
+  cuboid 3 9.49538 -9.49538 0.36183 0.00329 34.37288 0.00398  origin x=-9.77436291072932 y=-6.06512
+  media 101 1 2
+  media 101 1 3
+  boundary 1
+'============================================================================
+unit 7
+  com='full-plate 6'
+'---full-plate 6 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -2.35 -4.9 34.37686 0 
+'---graphite meat---
+  media 24 1 1 -2 -3
+'---plate 6 bottom---
+  cuboid 2 9.49538 -9.49538 0.36183 0.00329 34.37288 0.00398  origin x=-10.5047802832865 y=-4.8
+'---plate 6 top---
+  cuboid 3 9.49538 -9.49538 0.36183 0.00329 34.37288 0.00398  origin x=-11.6507512855956 y=-2.81512
+  media 101 1 2
+  media 101 1 3
+  boundary 1
+unit 8
+  com='channel 1'
+'---channel 1 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -21.15 -21.5 34.37686 0 
+'---left cylinder channel 1---
+  cylinder 2 0.35 34.37686 0 origin x=-8.06510338203612 y=-21.15
+'---right cylinder channel 1---
+  cylinder 3 0.35 34.37686 0 origin x=5.93489661796388 y=-21.15
+'---coolant channel active region---
+  ppiped 4 22.5166604983954 22.1125153099627 34.37686 30 0 0  rotate a1=-60 origin x=-23.2672158483419 y=-2
+'---spacing teeth---
+  media 90 1 1 -4
+'---FLiBe coolant channel---
+  media 50 1 4 -2 -3
+'---left cylinder---
+  media 24 1 2
+'---right cylinder---
+  media 24 1 3
+  boundary 1
+'============================================================================
+unit 9
+  com='channel 2'
+'---channel 2 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -17.9 -18.6 34.37686 0 
+'---left cylinder channel 2---
+  cylinder 2 0.7 34.37686 0 origin x=-9.53734656846966 y=-18.6
+'---right cylinder channel 2---
+  cylinder 3 0.7 34.37686 0 origin x=4.46265343153034 y=-18.6
+'---coolant channel active region---
+  ppiped 4 22.5166604983954 22.1125153099627 34.37686 30 0 0  rotate a1=-60 origin x=-23.2672158483419 y=-2
+'---spacing teeth---
+  media 90 1 1 -4
+'---FLiBe coolant channel---
+  media 50 1 4 -2 -3
+'---left cylinder---
+  media 24 1 2
+'---right cylinder---
+  media 24 1 3
+  boundary 1
+'============================================================================
+unit 10
+  com='channel 3'
+'---channel 3 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -14.65 -15.35 34.37686 0 
+'---left cylinder channel 3---
+  cylinder 2 0.7 34.37686 0  origin x=-11.4137349433359 y=-15.35
+'---right cylinder channel 3---
+  cylinder 3 0.7 34.37686 0  origin x=2.58626505666405 y=-15.35
+'---coolant channel active region---
+  ppiped 4 22.5166604983954 22.1125153099627 34.37686 30 0 0  rotate a1=-60 origin x=-23.2672158483419 y=-2
+'---spacing teeth---
+  media 90 1 1 -4
+'---FLiBe coolant channel---
+  media 50 1 4 -2 -3
+'---left cylinder---
+  media 24 1 2
+'---right cylinder---
+  media 24 1 3
+  boundary 1
+'============================================================================
+unit 11
+  com='channel 4 '
+'---channel 4  boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -11.4 -12.1 34.37686 0 
+'---left cylinder channel 4---
+  cylinder 2 0.7 34.37686 0  origin x=-13.2901233182022 y=-12.1
+'---right cylinder channel 4---
+  cylinder 3 0.7 34.37686 0  origin x=0.70987668179777 y=-12.1
+'---coolant channel active region---
+  ppiped 4 22.5166604983954 22.1125153099627 34.37686 30 0 0  rotate a1=-60 origin x=-23.2672158483419 y=-2
+'---spacing teeth---
+  media 90 1 1 -4
+'---FLiBe coolant channel---
+  media 50 1 4 -2 -3
+'---left cylinder---
+  media 24 1 2
+'---right cylinder---
+  media 24 1 3
+  boundary 1
+'============================================================================
+unit 12
+  com='channel 5'
+'---channel 5 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -8.15 -8.85 34.37686 0 
+'---left cylinder channel 5---
+  cylinder 2 0.7 34.37686 0  origin x=-15.1665116930685 y=-8.85
+'---right cylinder channel 5---
+  cylinder 3 0.7 34.37686 0  origin x=-1.16651169306851 y=-8.85
+'---coolant channel active region---
+  ppiped 4 22.5166604983954 22.1125153099627 34.37686 30 0 0  rotate a1=-60 origin x=-23.2672158483419 y=-2
+'---spacing teeth---
+  media 90 1 1 -4
+'---FLiBe coolant channel---
+  media 50 1 4 -2 -3
+'---left cylinder---
+  media 24 1 2
+'---right cylinder---
+  media 24 1 3
+  boundary 1
+'============================================================================
+unit 13
+  com='channel 6 '
+'---channel 6  boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -4.9 -5.6 34.37686 0 
+'---left cylinder channel 6---
+  cylinder 2 0.7 34.37686 0  origin x=-17.0429000679348 y=-5.6
+'---right cylinder channel 6---
+  cylinder 3 0.7 34.37686 0  origin x=-3.0429000679348 y=-5.6
+'---coolant channel active region---
+  ppiped 4 22.5166604983954 22.1125153099627 34.37686 30 0 0  rotate a1=-60 origin x=-23.2672158483419 y=-2
+'---spacing teeth---
+  media 90 1 1 -4
+'---FLiBe coolant channel---
+  media 50 1 4 -2 -3
+'---left cylinder---
+  media 24 1 2
+'---right cylinder---
+  media 24 1 3
+  boundary 1
+'============================================================================
+unit 14
+  com='channel 7'
+'---channel 7 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -2 -2.35 34.37686 0 
+'---left cylinder channel 7---
+  cylinder 2 0.35 34.37686 0  origin x=-18.9192884428011 y=-2.35
+'---right cylinder channel 7---
+  cylinder 3 0.35 34.37686 0  origin x=-4.91928844280108 y=-2.35
+'---coolant channel active region---
+  ppiped 4 22.5166604983954 22.1125153099627 34.37686 30 0 0  rotate a1=-60 origin x=-23.2672158483419 y=-2
+'---spacing teeth---
+  media 90 1 1 -4
+'---FLiBe coolant channel---
+  media 50 1 4 -2 -3
+'---left cylinder---
+  media 24 1 2
+'---right cylinder---
+  media 24 1 3
+  boundary 1
+'============================================================================
+unit 15
+  com='1/3 assembly w/ stack of plates'
+'---fuel stack outer boundary---
+  ppiped 2 22.5166605 23.1 550.02976 30 0 0  rotate a1=-60 origin x=-23.6713610367747 y=-2
+'---stack of fuel plates with 5 axial regions---
+  array 2 2 place 1 1 1 0 0 0
+'---frame surrounding fuel stack---
+  ppiped 1 24.96462564  25.2186597582029 670 30 0 0  rotate a1=-60 origin x=-25.47269388 y=-0.88
+  media 90 1 1 -2
+  boundary 1
+' ==============================================
+' ---- fuel assembly with active core region
+unit 16
+  com='Fuel Assembly'
+'---Graphite Frame---
+  rhexprism 1 22.5  670 0.0
+'---Inner-Assembly Channel---
+  rhexprism 2 23.4  670 0.0
+'---Y-Shape Control Blade Slot---
+  cuboid 3 0.0 -10.38 0.88 -0.88  670 0.0
+'---Y-Shape Control Blade Slot---
+  cuboid 4 0.0 -10.38 0.88 -0.88  670 0.0 rotate a1=120 a2=0 a3=0
+'---Y-Shape Control Blade Slot---
+  cuboid 5 0.0 -10.38 0.88 -0.88  670 0.0 rotate a1=-120 a2=0 a3=0
+'---top bottom plate---
+  plane 6 xpl=0 ypl=0 zpl=1 con=-35
+'---top bottom reflector---
+  plane 7 xpl=0 ypl=0 zpl=1 con=-60
+'--top active region---
+  plane 8 xpl=0 ypl=0 zpl=1 con=-610.02976
+'---top top reflector---
+  plane 9 xpl=0 ypl=0 zpl=1 con=-635
+' ----- FIRST  BLOCK -----
+' ----- bottom plate -----
+'---graphite frame---
+  media 91 1 1 -3 -4 -5 -6
+'---inner-assembly coolant---
+  media 51 1 2 -1 -6
+'---Y-Shape Control Blade Slot---
+  media 51 1 3 -6
+'---Y-Shape Control Blade Slot---
+  media 51 1 4 -3 -6
+'---Y-Shape Control Blade Slot---
+  media 51 1 5 -3 -4 -6
+' ----- SECOND     BLOCK -----
+' ----- bottom reflector -----
+'---graphite frame---
+  media 91 1 1 -3 -4 -5 6 -7
+'---inner-assembly coolant---
+  media 51 1 2 -1 6 -7
+'---Y-Shape Control Blade Slot---
+  media 51 1 3 6 -7
+'---Y-Shape Control Blade Slot---
+  media 51 1 4 -3 6 -7
+'---Y-Shape Control Blade Slot---
+  media 51 1 5 -3 -4 6 -7
+' ----- THIRD BLOCK -----
+' ----- active core -----
+'---graphite frame---
+  media 90 1 1 -3 -4 -5 7 -8
+'---inner-assembly coolant---
+  media 50 1 2 -1 7 -8
+'---Y-Shape Control Blade Slot---
+  media 50 1 3 7 -8
+'---Y-Shape Control Blade Slot---
+  media 50 1 4 -3 7 -8
+'---Y-Shape Control Blade Slot---
+  media 50 1 5 -3 -4 7 -8
+' ----- FOURTH  BLOCK -----
+' ----- top reflector -----
+'---graphite frame---
+  media 90 1 1 -3 -4 -5 8 -9
+'---inner-assembly coolant---
+  media 50 1 2 -1 8 -9
+'---Y-Shape Control Blade Slot---
+  media 50 1 3 8 -9
+'---Y-Shape Control Blade Slot---
+  media 50 1 4 -3 8 -9
+'---Y-Shape Control Blade Slot---
+  media 50 1 5 -3 -4 8 -9
+' ----- FIFTH BLOCK -----
+' ----- top   plate -----
+'---graphite frame---
+  media 31 1 1 -3 -4 -5 9
+'---inner-assembly coolant---
+  media 31 1 2 -1 9
+'---Y-Shape Control Blade Slot---
+  media 31 1 3 9
+'---Y-Shape Control Blade Slot---
+  media 31 1 4 -3 9
+'---Y-Shape Control Blade Slot---
+  media 31 1 5 -3 -4 9
+  hole 15 origin z=60
+  hole 15 origin z=60 rotate a1=120
+  hole 15 origin z=60 rotate a1=-120
+  boundary 2
+' ---- replaceable graphite reflectors
+unit 17
+  com='replaceable reflector'
+'---Graphite Frame---
+  rhexprism 1 22.5  670 0.0
+'---Inner-Assembly Channel---
+  rhexprism 2 23.4  670 0.0
+'---Inner-Assembly Channel---
+  cylinder 3 2.0  670 0.0
+  media 26 1 1 -3
+  media 51 1 2 -1
+  media 51 1 3
+  boundary 2
+' ==============================================
+' ---- permanent graphite reflectors
+unit 18
+  com='permanent reflector'
+'---Inner-Assembly Channel---
+  rhexprism 2 23.4  670 0.0
+  media 26 1 2
+  boundary 2
+' ==============================================
+global unit 19
+  com='full FHR core'
+' --- assembly boundaries through radial reflector ---
+ cylinder 1 478 670 0.0
+  array 3 1 place 13 12 1 0 0 0
+ boundary 1
+end geometry
+read array
+ara=1 nux=202 nuy=5 nuz=371 prt=no typ=square fill 374710R1 end fill
+ara=2 nux=1 nuy=13 nuz=16 prt=no typ=square fill 
+     8 2 9 3 10 4 11 5 12 6 13 7 14
+     8 2 9 3 10 4 11 5 12 6 13 7 14
+     8 2 9 3 10 4 11 5 12 6 13 7 14
+     8 2 9 3 10 4 11 5 12 6 13 7 14
+     8 2 9 3 10 4 11 5 12 6 13 7 14
+     8 2 9 3 10 4 11 5 12 6 13 7 14
+     8 2 9 3 10 4 11 5 12 6 13 7 14
+     8 2 9 3 10 4 11 5 12 6 13 7 14
+     8 2 9 3 10 4 11 5 12 6 13 7 14
+     8 2 9 3 10 4 11 5 12 6 13 7 14
+     8 2 9 3 10 4 11 5 12 6 13 7 14
+     8 2 9 3 10 4 11 5 12 6 13 7 14
+     8 2 9 3 10 4 11 5 12 6 13 7 14
+     8 2 9 3 10 4 11 5 12 6 13 7 14
+     8 2 9 3 10 4 11 5 12 6 13 7 14
+     8 2 9 3 10 4 11 5 12 6 13 7 14 end fill
+ara=3  nux=25 nuy=23 nuz=1 typ=rhexagonal
+  fill
+       18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18
+       18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18
+       18 18 18 18 18 18 18 18 18 17 17 17 17 17 17 17 18 18 18 18 18 18 18 18 18
+       18 18 18 18 18 18 18 17 17 16 16 16 16 16 16 16 17 17 18 18 18 18 18 18 18
+       18 18 18 18 18 17 17 16 16 16 16 16 16 16 16 16 16 16 17 17 18 18 18 18 18
+       18 18 18 18 17 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 17 18 18 18 18
+       18 18 18 17 17 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 17 17 18 18 18
+       18 18 18 17 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 17 18 18 18
+       18 18 17 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 17 18 18
+       18 18 17 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 17 18 18
+       18 18 17 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 17 18 18
+       18 18 17 16 16 16 16 16 16 16 16 16 17 16 16 16 16 16 16 16 16 16 17 18 18
+       18 18 17 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 17 18 18
+       18 18 17 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 17 18 18
+       18 18 17 17 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 17 17 18 18
+       18 18 18 17 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 17 18 18 18
+       18 18 18 18 17 16 16 16 16 16 16 16 16 16 16 16 16 16 16 16 17 18 18 18 18
+       18 18 18 18 17 17 16 16 16 16 16 16 16 16 16 16 16 16 16 17 17 18 18 18 18
+       18 18 18 18 18 18 17 17 16 16 16 16 16 16 16 16 16 17 17 18 18 18 18 18 18
+       18 18 18 18 18 18 18 18 17 17 16 17 16 17 16 17 17 18 18 18 18 18 18 18 18
+       18 18 18 18 18 18 18 18 18 18 17 18 17 18 17 18 18 18 18 18 18 18 18 18 18
+       18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18
+       18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18 18
+  end fill
+end array
+end data
+end

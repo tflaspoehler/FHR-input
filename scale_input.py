@@ -6,7 +6,7 @@ class comment_class():
 class unit_class():
     def __init__(self, line):
         self.line = line
-        self.id = int(line.split()[1])
+        self.id = int(line.split()[-1])
 
 class hole_class():
     def __init__(self, line):
@@ -57,7 +57,7 @@ class scale_unit_class():
                     self.lines.append(array_class(line))
                 else:
                     self.lines.append(geometry_class(line))
-    def print_replace(self, output="inp", unit=0, medias=[], arrays=[], holes=[], globe=False):
+    def print_replace(self, output="inp", unit=0, medias=[], arrays=[], holes=[], globe=False, comments=False):
         for line in self.lines:
         
             if line.line.split()[0] == "unit":
@@ -96,11 +96,11 @@ class scale_unit_class():
                         break
                 output.write(l+"\n")
             elif line.line[0] == "'":
-                pass
-                output.write(line.line+"\n")
+                if comments:
+                    output.write(line.line+"\n")
             elif "com" in line.line.split()[0] and "=" in line.line.split()[0]:
-                pass
-                output.write(line.line+"\n")
+                if comments:
+                    output.write(line.line+"\n")
             else:
                 output.write(line.line+"\n")
                 

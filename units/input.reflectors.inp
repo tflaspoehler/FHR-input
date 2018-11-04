@@ -1,0 +1,22 @@
+' ==============================================
+' ---- replaceable graphite reflectors
+unit 25
+  com='replaceable reflector'
+'---Graphite Frame---
+  rhexprism 1 22.5  670 0.0
+'---Inner-Assembly Channel---
+  rhexprism 2 23.4  670 0.0
+'---Inner-Assembly Channel---
+  cylinder 3 2.0  670 0.0
+  media 26 1 1 -3
+  media 51 1 2 -1
+  media 51 1 3
+  boundary 2
+' ==============================================
+' ---- permanent graphite reflectors
+unit 26
+  com='permanent reflector'
+'---Inner-Assembly Channel---
+  rhexprism 2 23.4  670 0.0
+  media 26 1 2
+  boundary 2
