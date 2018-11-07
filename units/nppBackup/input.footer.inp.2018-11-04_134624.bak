@@ -1,0 +1,684 @@
+'============================================================================
+unit 101
+  com='channel 1'
+'---channel 1 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -21.15 -21.5 35 0 
+'---coolant channel bottom plate---
+  ppiped 4 22.5166604983954 22.1125153099627 35 30 0 0  rotate a1=-60 origin x=-23.2672158483419 y=-2
+'---spacing teeth---
+  media 91 1 1 -4
+'---FLiBe coolant channel---
+  media 51 1 4
+  boundary 1
+'============================================================================
+unit 103
+  com='channel 2'
+'---channel 2 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -17.9 -18.6 35 0 
+'---coolant channel bottom plate---
+  ppiped 4 22.5166604983954 22.1125153099627 35 30 0 0  rotate a1=-60 origin x=-23.2672158483419 y=-2
+'---spacing teeth---
+  media 91 1 1 -4
+'---FLiBe coolant channel---
+  media 51 1 4
+  boundary 1
+'============================================================================
+unit 105
+  com='channel 3'
+'---channel 3 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -14.65 -15.35 35 0 
+'---coolant channel bottom plate---
+  ppiped 4 22.5166604983954 22.1125153099627 35 30 0 0  rotate a1=-60 origin x=-23.2672158483419 y=-2
+'---spacing teeth---
+  media 91 1 1 -4
+'---FLiBe coolant channel---
+  media 51 1 4
+  boundary 1
+'============================================================================
+unit 107
+  com='channel 4 '
+'---channel 4  boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -11.4 -12.1 35 0 
+'---coolant channel bottom plate---
+  ppiped 4 22.5166604983954 22.1125153099627 35 30 0 0  rotate a1=-60 origin x=-23.2672158483419 y=-2
+'---spacing teeth---
+  media 91 1 1 -4
+'---FLiBe coolant channel---
+  media 51 1 4
+  boundary 1
+'============================================================================
+unit 109
+  com='channel 5'
+'---channel 5 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -8.15 -8.85 35 0 
+'---coolant channel bottom plate---
+  ppiped 4 22.5166604983954 22.1125153099627 35 30 0 0  rotate a1=-60 origin x=-23.2672158483419 y=-2
+'---spacing teeth---
+  media 91 1 1 -4
+'---FLiBe coolant channel---
+  media 51 1 4
+  boundary 1
+'============================================================================
+unit 111
+  com='channel 6 '
+'---channel 6  boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -4.9 -5.6 35 0 
+'---coolant channel bottom plate---
+  ppiped 4 22.5166604983954 22.1125153099627 35 30 0 0  rotate a1=-60 origin x=-23.2672158483419 y=-2
+'---spacing teeth---
+  media 91 1 1 -4
+'---FLiBe coolant channel---
+  media 51 1 4
+  boundary 1
+'============================================================================
+unit 113
+  com='channel 7'
+'---channel 7 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -2 -2.35 35 0 
+'---coolant channel bottom plate---
+  ppiped 4 22.5166604983954 22.1125153099627 35 30 0 0  rotate a1=-60 origin x=-23.2672158483419 y=-2
+'---spacing teeth---
+  media 91 1 1 -4
+'---FLiBe coolant channel---
+  media 51 1 4
+  boundary 1
+'============================================================================
+unit 121
+  com='channel 1'
+'---channel 1 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -21.15 -21.5 25 0 
+'---left cylinder channel 1---
+  cylinder 2 0.35 25 0 origin x=-8.06510338203612 y=-21.15
+'---right cylinder channel 1---
+  cylinder 3 0.35 25 0 origin x=5.93489661796388 y=-21.15
+'---coolant channel bottom reflector---
+  ppiped 4 22.5166604983954 22.1125153099627 25 30 0 0  rotate a1=-60 origin x=-23.2672158483419 y=-2
+'---spacing teeth---
+  media 91 1 1 -4
+'---FLiBe coolant channel---
+  media 51 1 4 -2 -3
+'---left cylinder---
+  media 26 1 2
+'---right cylinder---
+  media 26 1 3
+  boundary 1
+'============================================================================
+unit 123
+  com='channel 2'
+'---channel 2 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -17.9 -18.6 25 0 
+'---left cylinder channel 2---
+  cylinder 2 0.7 25 0  origin x=-9.6269437248128 y=-18.6
+'---right cylinder channel 2---
+  cylinder 3 0.7 25 0  origin x=4.3730562751872 y=-18.6
+'---coolant channel bottom reflector---
+  ppiped 4 22.5166604983954 22.1125153099627 25 30 0 0  rotate a1=-60 origin x=-23.2672158483419 y=-2
+'---spacing teeth---
+  media 91 1 1 -4
+'---FLiBe coolant channel---
+  media 51 1 4 -2 -3
+'---left cylinder---
+  media 26 1 2
+'---right cylinder---
+  media 26 1 3
+  boundary 1
+'============================================================================
+unit 125
+  com='channel 3'
+'---channel 3 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -14.65 -15.35 25 0 
+'---left cylinder channel 3---
+  cylinder 2 0.7 25 0  origin x=-11.5033320996791 y=-15.35
+'---right cylinder channel 3---
+  cylinder 3 0.7 25 0  origin x=2.49666790032092 y=-15.35
+'---coolant channel bottom reflector---
+  ppiped 4 22.5166604983954 22.1125153099627 25 30 0 0  rotate a1=-60 origin x=-23.2672158483419 y=-2
+'---spacing teeth---
+  media 91 1 1 -4
+'---FLiBe coolant channel---
+  media 51 1 4 -2 -3
+'---left cylinder---
+  media 26 1 2
+'---right cylinder---
+  media 26 1 3
+  boundary 1
+'============================================================================
+unit 127
+  com='channel 4 '
+'---channel 4  boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -11.4 -12.1 25 0 
+'---left cylinder channel 4---
+  cylinder 2 0.7 25 0  origin x=-13.3797204745454 y=-12.1
+'---right cylinder channel 4---
+  cylinder 3 0.7 25 0  origin x=0.620279525454636 y=-12.1
+'---coolant channel bottom reflector---
+  ppiped 4 22.5166604983954 22.1125153099627 25 30 0 0  rotate a1=-60 origin x=-23.2672158483419 y=-2
+'---spacing teeth---
+  media 91 1 1 -4
+'---FLiBe coolant channel---
+  media 51 1 4 -2 -3
+'---left cylinder---
+  media 26 1 2
+'---right cylinder---
+  media 26 1 3
+  boundary 1
+'============================================================================
+unit 129
+  com='channel 5'
+'---channel 5 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -8.15 -8.85 25 0 
+'---left cylinder channel 5---
+  cylinder 2 0.7 25 0  origin x=-15.2561088494116 y=-8.85
+'---right cylinder channel 5---
+  cylinder 3 0.7 25 0  origin x=-1.25610884941165 y=-8.85
+'---coolant channel bottom reflector---
+  ppiped 4 22.5166604983954 22.1125153099627 25 30 0 0  rotate a1=-60 origin x=-23.2672158483419 y=-2
+'---spacing teeth---
+  media 91 1 1 -4
+'---FLiBe coolant channel---
+  media 51 1 4 -2 -3
+'---left cylinder---
+  media 26 1 2
+'---right cylinder---
+  media 26 1 3
+  boundary 1
+'============================================================================
+unit 131
+  com='channel 6 '
+'---channel 6  boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -4.9 -5.6 25 0 
+'---left cylinder channel 6---
+  cylinder 2 0.7 25 0  origin x=-17.1324972242779 y=-5.6
+'---right cylinder channel 6---
+  cylinder 3 0.7 25 0  origin x=-3.13249722427793 y=-5.6
+'---coolant channel bottom reflector---
+  ppiped 4 22.5166604983954 22.1125153099627 25 30 0 0  rotate a1=-60 origin x=-23.2672158483419 y=-2
+'---spacing teeth---
+  media 91 1 1 -4
+'---FLiBe coolant channel---
+  media 51 1 4 -2 -3
+'---left cylinder---
+  media 26 1 2
+'---right cylinder---
+  media 26 1 3
+  boundary 1
+'============================================================================
+unit 133
+  com='channel 7'
+'---channel 7 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -2 -2.35 25 0 
+'---left cylinder channel 7---
+  cylinder 2 0.35 25 0  origin x=-19.0088855991442 y=-2.35
+'---right cylinder channel 7---
+  cylinder 3 0.35 25 0  origin x=-5.00888559914421 y=-2.35
+'---coolant channel bottom reflector---
+  ppiped 4 22.5166604983954 22.1125153099627 25 30 0 0  rotate a1=-60 origin x=-23.2672158483419 y=-2
+'---spacing teeth---
+  media 91 1 1 -4
+'---FLiBe coolant channel---
+  media 51 1 4 -2 -3
+'---left cylinder---
+  media 26 1 2
+'---right cylinder---
+  media 26 1 3
+  boundary 1
+'============================================================================
+unit 141
+  com='channel 1'
+'---channel 1 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -21.15 -21.5 550.02976 0 
+'---left cylinder channel 1---
+  cylinder 2 0.35 550.02976 0 origin x=-8.06510338203612 y=-21.15
+'---right cylinder channel 1---
+  cylinder 3 0.35 550.02976 0 origin x=5.93489661796388 y=-21.15
+'---coolant channel active region---
+  ppiped 4 22.5166604983954 22.1125153099627 550.02976 30 0 0  rotate a1=-60 origin x=-23.2672158483419 y=-2
+'---spacing teeth---
+  media 90 1 1 -4
+'---FLiBe coolant channel---
+  media 50 1 4 -2 -3
+'---left cylinder---
+  media 24 1 2
+'---right cylinder---
+  media 24 1 3
+  boundary 1
+'============================================================================
+unit 143
+  com='channel 2'
+'---channel 2 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -17.9 -18.6 550.02976 0 
+'---left cylinder channel 2---
+  cylinder 2 0.7 550.02976 0  origin x=-9.6269437248128 y=-18.6
+'---right cylinder channel 2---
+  cylinder 3 0.7 550.02976 0  origin x=4.3730562751872 y=-18.6
+'---coolant channel active region---
+  ppiped 4 22.5166604983954 22.1125153099627 550.02976 30 0 0  rotate a1=-60 origin x=-23.2672158483419 y=-2
+'---spacing teeth---
+  media 90 1 1 -4
+'---FLiBe coolant channel---
+  media 50 1 4 -2 -3
+'---left cylinder---
+  media 24 1 2
+'---right cylinder---
+  media 24 1 3
+  boundary 1
+'============================================================================
+unit 145
+  com='channel 3'
+'---channel 3 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -14.65 -15.35 550.02976 0 
+'---left cylinder channel 3---
+  cylinder 2 0.7 550.02976 0  origin x=-11.5033320996791 y=-15.35
+'---right cylinder channel 3---
+  cylinder 3 0.7 550.02976 0  origin x=2.49666790032092 y=-15.35
+'---coolant channel active region---
+  ppiped 4 22.5166604983954 22.1125153099627 550.02976 30 0 0  rotate a1=-60 origin x=-23.2672158483419 y=-2
+'---spacing teeth---
+  media 90 1 1 -4
+'---FLiBe coolant channel---
+  media 50 1 4 -2 -3
+'---left cylinder---
+  media 24 1 2
+'---right cylinder---
+  media 24 1 3
+  boundary 1
+'============================================================================
+unit 147
+  com='channel 4 '
+'---channel 4  boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -11.4 -12.1 550.02976 0 
+'---left cylinder channel 4---
+  cylinder 2 0.7 550.02976 0  origin x=-13.3797204745454 y=-12.1
+'---right cylinder channel 4---
+  cylinder 3 0.7 550.02976 0  origin x=0.620279525454636 y=-12.1
+'---coolant channel active region---
+  ppiped 4 22.5166604983954 22.1125153099627 550.02976 30 0 0  rotate a1=-60 origin x=-23.2672158483419 y=-2
+'---spacing teeth---
+  media 90 1 1 -4
+'---FLiBe coolant channel---
+  media 50 1 4 -2 -3
+'---left cylinder---
+  media 24 1 2
+'---right cylinder---
+  media 24 1 3
+  boundary 1
+'============================================================================
+unit 149
+  com='channel 5'
+'---channel 5 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -8.15 -8.85 550.02976 0 
+'---left cylinder channel 5---
+  cylinder 2 0.7 550.02976 0  origin x=-15.2561088494116 y=-8.85
+'---right cylinder channel 5---
+  cylinder 3 0.7 550.02976 0  origin x=-1.25610884941165 y=-8.85
+'---coolant channel active region---
+  ppiped 4 22.5166604983954 22.1125153099627 550.02976 30 0 0  rotate a1=-60 origin x=-23.2672158483419 y=-2
+'---spacing teeth---
+  media 90 1 1 -4
+'---FLiBe coolant channel---
+  media 50 1 4 -2 -3
+'---left cylinder---
+  media 24 1 2
+'---right cylinder---
+  media 24 1 3
+  boundary 1
+'============================================================================
+unit 151
+  com='channel 6 '
+'---channel 6  boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -4.9 -5.6 550.02976 0 
+'---left cylinder channel 6---
+  cylinder 2 0.7 550.02976 0  origin x=-17.1324972242779 y=-5.6
+'---right cylinder channel 6---
+  cylinder 3 0.7 550.02976 0  origin x=-3.13249722427793 y=-5.6
+'---coolant channel active region---
+  ppiped 4 22.5166604983954 22.1125153099627 550.02976 30 0 0  rotate a1=-60 origin x=-23.2672158483419 y=-2
+'---spacing teeth---
+  media 90 1 1 -4
+'---FLiBe coolant channel---
+  media 50 1 4 -2 -3
+'---left cylinder---
+  media 24 1 2
+'---right cylinder---
+  media 24 1 3
+  boundary 1
+'============================================================================
+unit 153
+  com='channel 7'
+'---channel 7 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -2 -2.35 550.02976 0 
+'---left cylinder channel 7---
+  cylinder 2 0.35 550.02976 0  origin x=-19.0088855991442 y=-2.35
+'---right cylinder channel 7---
+  cylinder 3 0.35 550.02976 0  origin x=-5.00888559914421 y=-2.35
+'---coolant channel active region---
+  ppiped 4 22.5166604983954 22.1125153099627 550.02976 30 0 0  rotate a1=-60 origin x=-23.2672158483419 y=-2
+'---spacing teeth---
+  media 90 1 1 -4
+'---FLiBe coolant channel---
+  media 50 1 4 -2 -3
+'---left cylinder---
+  media 24 1 2
+'---right cylinder---
+  media 24 1 3
+  boundary 1
+'============================================================================
+unit 161
+  com='channel 1'
+'---channel 1 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -21.15 -21.5 24.97024 0 
+'---left cylinder channel 1---
+  cylinder 2 0.35 24.97024 0 origin x=-8.06510338203612 y=-21.15
+'---right cylinder channel 1---
+  cylinder 3 0.35 24.97024 0 origin x=5.93489661796388 y=-21.15
+'---coolant channel top reflector---
+  ppiped 4 22.5166604983954 22.1125153099627 24.97024 30 0 0  rotate a1=-60 origin x=-23.2672158483419 y=-2
+'---spacing teeth---
+  media 90 1 1 -4
+'---FLiBe coolant channel---
+  media 50 1 4 -2 -3
+'---left cylinder---
+  media 27 1 2
+'---right cylinder---
+  media 27 1 3
+  boundary 1
+'============================================================================
+unit 163
+  com='channel 2'
+'---channel 2 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -17.9 -18.6 24.97024 0 
+'---left cylinder channel 2---
+  cylinder 2 0.7 24.97024 0  origin x=-9.6269437248128 y=-18.6
+'---right cylinder channel 2---
+  cylinder 3 0.7 24.97024 0  origin x=4.3730562751872 y=-18.6
+'---coolant channel top reflector---
+  ppiped 4 22.5166604983954 22.1125153099627 24.97024 30 0 0  rotate a1=-60 origin x=-23.2672158483419 y=-2
+'---spacing teeth---
+  media 90 1 1 -4
+'---FLiBe coolant channel---
+  media 50 1 4 -2 -3
+'---left cylinder---
+  media 27 1 2
+'---right cylinder---
+  media 27 1 3
+  boundary 1
+'============================================================================
+unit 165
+  com='channel 3'
+'---channel 3 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -14.65 -15.35 24.97024 0 
+'---left cylinder channel 3---
+  cylinder 2 0.7 24.97024 0  origin x=-11.5033320996791 y=-15.35
+'---right cylinder channel 3---
+  cylinder 3 0.7 24.97024 0  origin x=2.49666790032092 y=-15.35
+'---coolant channel top reflector---
+  ppiped 4 22.5166604983954 22.1125153099627 24.97024 30 0 0  rotate a1=-60 origin x=-23.2672158483419 y=-2
+'---spacing teeth---
+  media 90 1 1 -4
+'---FLiBe coolant channel---
+  media 50 1 4 -2 -3
+'---left cylinder---
+  media 27 1 2
+'---right cylinder---
+  media 27 1 3
+  boundary 1
+'============================================================================
+unit 167
+  com='channel 4 '
+'---channel 4  boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -11.4 -12.1 24.97024 0 
+'---left cylinder channel 4---
+  cylinder 2 0.7 24.97024 0  origin x=-13.3797204745454 y=-12.1
+'---right cylinder channel 4---
+  cylinder 3 0.7 24.97024 0  origin x=0.620279525454636 y=-12.1
+'---coolant channel top reflector---
+  ppiped 4 22.5166604983954 22.1125153099627 24.97024 30 0 0  rotate a1=-60 origin x=-23.2672158483419 y=-2
+'---spacing teeth---
+  media 90 1 1 -4
+'---FLiBe coolant channel---
+  media 50 1 4 -2 -3
+'---left cylinder---
+  media 27 1 2
+'---right cylinder---
+  media 27 1 3
+  boundary 1
+'============================================================================
+unit 169
+  com='channel 5'
+'---channel 5 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -8.15 -8.85 24.97024 0 
+'---left cylinder channel 5---
+  cylinder 2 0.7 24.97024 0  origin x=-15.2561088494116 y=-8.85
+'---right cylinder channel 5---
+  cylinder 3 0.7 24.97024 0  origin x=-1.25610884941165 y=-8.85
+'---coolant channel top reflector---
+  ppiped 4 22.5166604983954 22.1125153099627 24.97024 30 0 0  rotate a1=-60 origin x=-23.2672158483419 y=-2
+'---spacing teeth---
+  media 90 1 1 -4
+'---FLiBe coolant channel---
+  media 50 1 4 -2 -3
+'---left cylinder---
+  media 27 1 2
+'---right cylinder---
+  media 27 1 3
+  boundary 1
+'============================================================================
+unit 171
+  com='channel 6 '
+'---channel 6  boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -4.9 -5.6 24.97024 0 
+'---left cylinder channel 6---
+  cylinder 2 0.7 24.97024 0  origin x=-17.1324972242779 y=-5.6
+'---right cylinder channel 6---
+  cylinder 3 0.7 24.97024 0  origin x=-3.13249722427793 y=-5.6
+'---coolant channel top reflector---
+  ppiped 4 22.5166604983954 22.1125153099627 24.97024 30 0 0  rotate a1=-60 origin x=-23.2672158483419 y=-2
+'---spacing teeth---
+  media 90 1 1 -4
+'---FLiBe coolant channel---
+  media 50 1 4 -2 -3
+'---left cylinder---
+  media 27 1 2
+'---right cylinder---
+  media 27 1 3
+  boundary 1
+'============================================================================
+unit 173
+  com='channel 7'
+'---channel 7 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -2 -2.35 24.97024 0 
+'---left cylinder channel 7---
+  cylinder 2 0.35 24.97024 0  origin x=-19.0088855991442 y=-2.35
+'---right cylinder channel 7---
+  cylinder 3 0.35 24.97024 0  origin x=-5.00888559914421 y=-2.35
+'---coolant channel top reflector---
+  ppiped 4 22.5166604983954 22.1125153099627 24.97024 30 0 0  rotate a1=-60 origin x=-23.2672158483419 y=-2
+'---spacing teeth---
+  media 90 1 1 -4
+'---FLiBe coolant channel---
+  media 50 1 4 -2 -3
+'---left cylinder---
+  media 27 1 2
+'---right cylinder---
+  media 27 1 3
+  boundary 1
+'============================================================================
+unit 181
+  com='channel 1'
+'---channel 1 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -21.15 -21.5 35 0 
+'---coolant channel homogenized top---
+  ppiped 4 22.5166604983954 22.1125153099627 35 30 0 0  rotate a1=-60 origin x=-23.2672158483419 y=-2
+'---spacing teeth---
+  media 31 1 1 -4
+'---FLiBe coolant channel---
+  media 31 1 4
+  boundary 1
+'============================================================================
+unit 183
+  com='channel 2'
+'---channel 2 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -17.9 -18.6 35 0 
+'---coolant channel homogenized top---
+  ppiped 4 22.5166604983954 22.1125153099627 35 30 0 0  rotate a1=-60 origin x=-23.2672158483419 y=-2
+'---spacing teeth---
+  media 31 1 1 -4
+'---FLiBe coolant channel---
+  media 31 1 4
+  boundary 1
+'============================================================================
+unit 185
+  com='channel 3'
+'---channel 3 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -14.65 -15.35 35 0 
+'---coolant channel homogenized top---
+  ppiped 4 22.5166604983954 22.1125153099627 35 30 0 0  rotate a1=-60 origin x=-23.2672158483419 y=-2
+'---spacing teeth---
+  media 31 1 1 -4
+'---FLiBe coolant channel---
+  media 31 1 4
+  boundary 1
+'============================================================================
+unit 187
+  com='channel 4 '
+'---channel 4  boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -11.4 -12.1 35 0 
+'---coolant channel homogenized top---
+  ppiped 4 22.5166604983954 22.1125153099627 35 30 0 0  rotate a1=-60 origin x=-23.2672158483419 y=-2
+'---spacing teeth---
+  media 31 1 1 -4
+'---FLiBe coolant channel---
+  media 31 1 4
+  boundary 1
+'============================================================================
+unit 189
+  com='channel 5'
+'---channel 5 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -8.15 -8.85 35 0 
+'---coolant channel homogenized top---
+  ppiped 4 22.5166604983954 22.1125153099627 35 30 0 0  rotate a1=-60 origin x=-23.2672158483419 y=-2
+'---spacing teeth---
+  media 31 1 1 -4
+'---FLiBe coolant channel---
+  media 31 1 4
+  boundary 1
+'============================================================================
+unit 191
+  com='channel 6 '
+'---channel 6  boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -4.9 -5.6 35 0 
+'---coolant channel homogenized top---
+  ppiped 4 22.5166604983954 22.1125153099627 35 30 0 0  rotate a1=-60 origin x=-23.2672158483419 y=-2
+'---spacing teeth---
+  media 31 1 1 -4
+'---FLiBe coolant channel---
+  media 31 1 4
+  boundary 1
+'============================================================================
+unit 193
+  com='channel 7'
+'---channel 7 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -2 -2.35 35 0 
+'---coolant channel homogenized top---
+  ppiped 4 22.5166604983954 22.1125153099627 35 30 0 0  rotate a1=-60 origin x=-23.2672158483419 y=-2
+'---spacing teeth---
+  media 31 1 1 -4
+'---FLiBe coolant channel---
+  media 31 1 4
+  boundary 1
+'============================================================================
+unit 102
+  com='full-plate 1'
+'---full-plate 1 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -18.6 -21.15 35 0 
+'---graphite meat---
+  media 19 1 1
+  boundary 1
+'============================================================================
+unit 104
+  com='full-plate 2'
+'---full-plate 2 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -15.35 -17.9 35 0 
+'---graphite meat---
+  media 19 1 1
+  boundary 1
+'============================================================================
+unit 106
+  com='full-plate 3'
+'---full-plate 3 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -12.1 -14.65 35 0 
+'---graphite meat---
+  media 19 1 1
+  boundary 1
+'============================================================================
+unit 108
+  com='full-plate 4'
+'---full-plate 4 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -8.85 -11.4 35 0 
+'---graphite meat---
+  media 19 1 1
+  boundary 1
+'============================================================================
+unit 110
+  com='full-plate 5'
+'---full-plate 5 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -5.6 -8.15 35 0 
+'---graphite meat---
+  media 19 1 1
+  boundary 1
+'============================================================================
+unit 112
+  com='full-plate 6'
+'---full-plate 6 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -2.35 -4.9 35 0 
+'---graphite meat---
+  media 19 1 1
+  boundary 1
+'============================================================================
+unit 122
+  com='full-plate 1'
+'---full-plate 1 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -18.6 -21.15 25 0 
+'---graphite meat---
+  media 26 1 1
+  boundary 1
+'============================================================================
+unit 124
+  com='full-plate 2'
+'---full-plate 2 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -15.35 -17.9 25 0 
+'---graphite meat---
+  media 26 1 1
+  boundary 1
+'============================================================================
+unit 126
+  com='full-plate 3'
+'---full-plate 3 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -12.1 -14.65 25 0 
+'---graphite meat---
+  media 26 1 1
+  boundary 1
+'============================================================================
+unit 128
+  com='full-plate 4'
+'---full-plate 4 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -8.85 -11.4 25 0 
+'---graphite meat---
+  media 26 1 1
+  boundary 1
+'============================================================================
+unit 130
+  com='full-plate 5'
+'---full-plate 5 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -5.6 -8.15 25 0 
+'---graphite meat---
+  media 26 1 1
+  boundary 1
+'============================================================================
+unit 132
+  com='full-plate 6'
+'---full-plate 6 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -2.35 -4.9 25 0 
+'---graphite meat---
+  media 26 1 1
+  boundary 1

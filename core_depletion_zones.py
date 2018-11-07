@@ -12,11 +12,15 @@ class core_class():
         a_file = open("arrays.dat", "w")
         output_file = open(output, "w")
         self.triso          = scale_unit_class(open("units/input.triso.inp", "r").readlines())
+        self.triso_stack          = scale_unit_class(open("units/input.triso_stack.inp", "r").readlines())
         self.plates         =  multiple_scale_units("units/input.plates.inp")
+        print [plate.id for plate in self.plates]
         self.channels       =  multiple_scale_units("units/input.channels.inp")
         self.third_stack    = scale_unit_class(open("units/input.one_third_stack.inp", "r").readlines())
         self.assembly       = scale_unit_class(open("units/input.fuel_assembly.inp", "r").readlines())
         self.axial_assembly = scale_unit_class(open("units/input.full_assembly.inp", "r").readlines())
+        self.footer       =  multiple_scale_units("units/input.footer.inp")
+        self.header       =  multiple_scale_units("units/input.header.inp")
         self.reflectors = multiple_scale_units("units/input.reflectors.inp")
         self.core = scale_unit_class(open("units/input.core.inp", "r").readlines())
         self.material    = [i.replace('\n','').replace('\r','').replace('\t','') for i in open("units/input.material.inp", "r").readlines()]
@@ -28,14 +32,16 @@ class core_class():
         ##     define parameters for assemblies
         u = 1
         m = 101
-        a = 1
+        a = 11
+        a_o = a
         n_z = axials
         n_z_total = 16
-        n_triso_arrays = tritants * planks * stripes * n_z * assemblies
+        n_triso_arrays = tritants * planks * stripes * assemblies
         n_stack_arrays = tritants * n_z
         assembly_units = []
         
         for assembly in range(0, assemblies):
+            print "------------------"
             ## -----------------------------------------
             ##     define variables for bookkeeping
             triso_array = []        
@@ -49,54 +55,92 @@ class core_class():
             
             for j in range(0, tritants):
                 a_tritent_start = a
-                for i in range(0, n_z):
-                    ## for this tritant / assembly o this axial level make the triso units
-                    for k in range(0, planks):
+                ## for this tritant / assembly o this axial level make the triso units
+                for k in range(0, planks):
                         for p in range(0, stripes):
                             triso_array.append([])
                             a += 1
-                            for s in range(0, sections):
-                                self.triso.print_replace(output=output_file, unit=u, medias=[[101, m]], comments=comments)
-                                triso_array[-1].append(u)
-                                m += 1
-                                u += 1
-
-                    ###### ------------------------------------------------------------------------------------ 
-                    ######        define plates and channels for this level and tritant
-                    plate_array.append([])
-                    for k in range(0, len(self.plates)):
-                        plate_array[-1].append(u)
-                        if planks > 1:
-                            if stripes > 1:
-                                self.plates[k].print_replace(output=output_file, unit=u, arrays=[[101, (a_tritent_start+(k*2))], [102, (a_tritent_start+(k*2))+1]], comments=comments)
-                                u += 1
-                            else:
-                                self.plates[k].print_replace(output=output_file, unit=u, arrays=[[101, a_tritent_start+k],       [102, a_tritent_start+k]], comments=comments)
-                                u += 1
-                        else:
-                                self.plates[k].print_replace(output=output_file, unit=u, arrays=[[101, a_tritent_start],         [102, a_tritent_start]], comments=comments)
-                                u += 1
-                    ######        only define coolant channels once per assembly level
-                    if (j == 0):
-                        channel_array.append([])
-                        for k in range(0, len(self.channels)):
-                            self.channels[k].print_replace(output=output_file, unit=u, comments=comments)
-                            channel_array[-1].append(u)
+                            for i in range(0, n_z):
+                                triso_array[-1].append([])
+                                for s in range(0, sections):
+                                    self.triso.print_replace(output=output_file, unit=u, medias=[[101, m]], comments=comments)
+                                    triso_array[-1][-1].append(u)
+                                    m += 1
+                                    u += 1
+                            self.triso_stack.print_replace(output=output_file, unit=u, arrays=[[11, a_tritent_start + k*stripes + p]], comments=comments)
                             u += 1
+                
+                ###### ------------------------------------------------------------------------------------ 
+                ######        define plates and channels for this level and tritant
+                plate_array.append([])
+                for k in range(0, len(self.plates)):
+                    plate_array[-1].append(u)
+                    if planks > 1:
+                        if stripes > 1:
+                            self.plates[k].print_replace(output=output_file, unit=u, holes=[[1, (u-(planks*stripes)-k)], [2, (u-(planks*stripes)+1-k)]], comments=comments)
+                            u += 1
+                        else:
+                            self.plates[k].print_replace(output=output_file, unit=u, holes=[[1, (u-(planks)-k)], [2, (u-(planks)-k)]], comments=comments)
+                            u += 1
+                    else:
+                            self.plates[k].print_replace(output=output_file, unit=u, holes=[[1, (u-1-k)], [2, (u-1-k)]], comments=comments)
+                            u += 1
+                ######        only define coolant channels once per assembly level
+                if (j == 0):
+                    channel_array.append([])
+                    for k in range(0, len(self.channels)):
+                        self.channels[k].print_replace(output=output_file, unit=u, comments=comments)
+                        channel_array[-1].append(u)
+                        u += 1
                     ###### ------------------------------------------------------------------------------------ 
-                                
+        
+                ###### ------------------------------------------------------------------------------------
+                ######        print units for the header and footer of active assemblies
+                if (assembly == 0 and j == 0):
+                    footers = []
+                    headers = []
+                    for footer in self.footer:
+                        footer.print_replace(output=output_file, unit=u, comments=comments)
+                        footers.append(u)
+                        u += 1
+                    for header in self.header:
+                        header.print_replace(output=output_file, unit=u, comments=comments)
+                        headers.append(u)
+                        u += 1
+                ###### ------------------------------------------------------------------------------------                
+
+                
                 ###### ------------------------------------------------------------------------------------ 
                 ######        add channel and fuel stack for this trident over all axial layers
-                next_array = n_triso_arrays + j + 1
-                stack = ["ara=" + repr(next_array) + " nux=1 nuy=13 nuz=" + repr(n_z_total) + " prt=no typ=square fill "]
+                next_array = n_triso_arrays + j + a_o
+                ## stack = ["ara=" + repr(next_array) + " nux=1 nuy=13 nuz=" + repr(n_z_total) + " prt=no typ=square fill "]
+                ## 
+                ## for s in range(0, n_z):
+                ##     for b in range(0, n_z_total/n_z):
+                stack = ["ara=" + repr(next_array) + " nux=1 nuy=13 nuz=5 prt=no typ=square fill "]
                 
-                for s in range(0, n_z):
-                    for b in range(0, n_z_total/n_z):
+                stack.append("     ")
+                for footer in footers[0:13]:
+                    stack[-1] += repr(footer) + " "
+                stack.append("     ")
+                for footer in footers[13:]:
+                    stack[-1] += repr(footer) + " "
+                
+                for s in range(0, 1):
+                    for b in range(0, 1):
                         stack.append("     ")
                         for c in range(0,6):
-                            stack[-1] += repr(channel_array[0-n_z+(s)][c]) + " "
-                            stack[-1] += repr(  plate_array[0-n_z+(s)][c]) + " "
-                        stack[-1] += repr(channel_array[0-n_z+(s)][-1])
+                            stack[-1] += repr(channel_array[-1][c]) + " "
+                            stack[-1] += repr(  plate_array[-1][c]) + " "
+                        stack[-1] += repr(channel_array[-1][-1])
+                        
+                stack.append("     ")
+                for header in headers[0:13]:
+                    stack[-1] += repr(header) + " "
+                stack.append("     ")
+                for header in headers[13:]:
+                    stack[-1] += repr(header) + " "
+                    
                 stack[-1] += " end fill"
                 
                 stacks.append(stack)
@@ -108,23 +152,42 @@ class core_class():
         
             ###### ------------------------------------------------------------------------------------ 
             ######        print array blocks to array.dat
-            for j in range(0, len(triso_array)):
-                if len(triso_array[j]) > 1:
-                    a_file.write("ara="+repr(a_start+j)+" nux=202 nuy=5 nuz=371 prt=no typ=square fill" + " 41R" + repr(triso_array[j][0]+0)
-                                                                                                        + " 40R" + repr(triso_array[j][0]+1)
-                                                                                                        + " 40R" + repr(triso_array[j][0]+2)
-                                                                                                        + " 40R" + repr(triso_array[j][0]+3)
-                                                                                                        + " 41R" + repr(triso_array[j][0]+4)
-                                                                                                        + " 1854Q202 end fill" + "\n")
-                else:
-                    a_file.write("ara="+repr(a_start+j)+" nux=202 nuy=5 nuz=371 prt=no typ=square fill " + repr(202*5*371) + "R" + repr(triso_array[j][0]) + " end fill" + "\n")
-
+            ## for j in range(0, len(triso_array)):
+            ##     if len(triso_array[j]) > 1:
+            ##         a_file.write("ara="+repr(a_start+j)+" nux=202 nuy=5 nuz=371 prt=no typ=square fill" + " 41R" + repr(triso_array[j][0]+0)
+            ##                                                                                             + " 40R" + repr(triso_array[j][0]+1)
+            ##                                                                                             + " 40R" + repr(triso_array[j][0]+2)
+            ##                                                                                             + " 40R" + repr(triso_array[j][0]+3)
+            ##                                                                                             + " 41R" + repr(triso_array[j][0]+4)
+            ##                                                                                             + " 1854Q202 end fill" + "\n")
+            ##     else:
+            ##         a_file.write("ara="+repr(a_start+j)+" nux=202 nuy=5 nuz=371 prt=no typ=square fill " + repr(202*5*371) + "R" + repr(triso_array[j][0]) + " end fill" + "\n")
+            for j in range(0, tritants):
+                a_tritent_start = a
+                for k in range(0, planks):
+                        for p in range(0, stripes):
+                            a_file.write("ara="+repr(a_start+j)+" nux=202 nuy=5 nuz=5936 prt=no typ=square fill" + "\n")
+                            triso_start = (j*planks*stripes) + (k*stripes) + (p) + k
+                            for i in range(0, n_z):
+                                ## print "(j*planks*stripes), (k*stripes), (p), k", (j*planks*stripes), (k*stripes), (p), k
+                                ## print "length", len(triso_array)
+                                ## print "start", triso_start
+                                if len(triso_array[triso_start][i]) > 1:
+                                    a_file.write("  41R" + repr(triso_array[triso_start][i][0]+0)
+                                                + " 40R" + repr(triso_array[triso_start][i][0]+1)
+                                                + " 40R" + repr(triso_array[triso_start][i][0]+2)
+                                                + " 40R" + repr(triso_array[triso_start][i][0]+3)
+                                                + " 41R" + repr(triso_array[triso_start][i][0]+4)
+                                                + " " + repr(1854*(n_z_total/n_z)) + "Q202" + "\n")
+                                else:
+                                    a_file.write("  " + repr(202*5*371*(n_z_total/n_z)) + "R" + repr(triso_array[triso_start][i][0]) + "\n")
+                            a_file.write(" end fill" + "\n")
+                
             for stack in stacks:   
                 for stick in stack:
                     a_file.write(stick + "\n")
             ###### ------------------------------------------------------------------------------------
-            
-            
+        
             ###### ------------------------------------------------------------------------------------
             ######        print out this assembly
             globe = True
@@ -154,7 +217,7 @@ class core_class():
 
         ###### ------------------------------------------------------------------------------------
         ######        print the global core unit and the array for the core layout
-        self.core.print_replace(output=output_file, unit=u, arrays=[[1, next_array+1]], globe=True, comments=comments)
+        self.core.print_replace(output=output_file, unit=u, arrays=[[1, 1]], globe=True, comments=comments)
 
         core_array = [[2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2],
                       [2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2],
@@ -191,7 +254,7 @@ class core_class():
                         core_array[j][i] = assembly_units[k]
                         if (assemblies > 1):
                             done = True
-        a_file.write("ara=" + repr(next_array+1) + "  nux=25 nuy=23 nuz=1 typ=rhexagonal" + "\n")
+        a_file.write("ara=" + repr(1) + "  nux=25 nuy=23 nuz=1 typ=rhexagonal" + "\n")
         a_file.write("  fill" + "\n")
         for j in range(0, len(core_array)):
             for i in range(0, len(core_array[j])):
@@ -274,10 +337,15 @@ class core_class():
         ###### ------------------------------------------------------------------------------------
         
         output_file.close()
-        
-axial_assembly = core_class(output="assembly.inp", tritants=1, planks=1, stripes=1, sections=1, axials=16)
 
-full_core      = core_class(output="full_core.16ax.3tri.inp", tritants=3, planks=1, stripes=1, sections=1, axials=16, assemblies=252)
-full_core      = core_class(output="full_core.16ax.single-assembly.inp", tritants=1, planks=1, stripes=1, sections=1, axials=16, assemblies=252)
+        
 full_core      = core_class(output="full_core.single-assembly.inp", tritants=1, planks=1, stripes=1, sections=1, axials=1, assemblies=1, comments=True)
+print "========================================================================"
+full_core      = core_class(output="full_core.16ax.single-assembly.inp", tritants=1, planks=1, stripes=1, sections=1, axials=16, assemblies=1)
+print "========================================================================"
+full_core      = core_class(output="full_core.16ax.3tri.inp", tritants=3, planks=1, stripes=1, sections=1, axials=16, assemblies=252)
+print "========================================================================"
+full_core      = core_class(output="full_core.252_assemblies.16axials.inp", tritants=1, planks=1, stripes=1, sections=1, axials=16, assemblies=252)
+print "========================================================================"
+full_core      = core_class(output="full_core.252_assemblies.8_axials.3_tris.inp", tritants=3, planks=1, stripes=1, sections=1, axials=8, assemblies=252)
 

@@ -1,0 +1,8 @@
+'============================================================================
+unit 10
+  com='Fuel Plate with a single TRISO Matrix'
+'---TRISO-filled fuel plate boundary---
+  cuboid 1 9.50006 -9.50006 0.4564 0 550.02976 0
+'---TRISO-filled plate---
+  array 11 1 place 1 1 1 -9.54709 0.04564 0.04633
+  boundary 1

@@ -1,0 +1,72 @@
+'============================================================================
+unit 11
+  com='full-plate 1'
+'---full-plate 1 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -18.6 -21.15 34.37686 0 
+'---graphite meat---
+  media 24 1 1
+'---bottom stripe---
+  hole 1 origin x=-1.12283840895508 y=-21.05
+'---top stripe---
+  hole 2 origin x=-2.26880941126418 y=-19.06512
+  boundary 1
+'============================================================================
+unit 21
+  com='full-plate 2'
+'---full-plate 1 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -15.35 -17.9 34.37686 0
+'---graphite meat---
+  media 24 1 1
+'---bottom stripe---
+  hole 1 origin x=-2.99922678382136 y=-17.8
+'---top stripe---
+  hole 2 origin x=-4.14519778613047 y=-15.81512
+  boundary 1
+'============================================================================
+unit 31
+  com='full-plate 3'
+'---full-plate 4 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -12.1 -14.65 34.37686 0 
+'---graphite meat---
+  media 24 1 1
+'---bottom stripe---
+  hole 1 origin x=-4.87561515868765 y=-14.55
+'---top stripe---
+  hole 2 origin x=-6.02158616099675 y=-12.56512
+  boundary 1
+'============================================================================
+unit 41
+  com='full-plate 4'
+'---full-plate 4 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -8.85 -11.4 34.37686 0 
+'---graphite meat---
+  media 24 1 1
+'---bottom stripe---
+  hole 22 origin x=-6.75200353355393 y=-11.3
+'---top stripe---
+  hole 23 origin x=-7.89797453586303 y=-9.31512
+  boundary 1
+'============================================================================
+unit 51
+  com='full-plate 5'
+'---full-plate 5 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -5.6 -8.15 34.37686 0 
+'---graphite meat---
+  media 24 1 1
+'---bottom stripe---
+  hole 1 origin x=-8.62839190842021 y=-8.05
+'---top stripe---
+  hole 2 origin x=-9.77436291072932 y=-6.06512
+  boundary 1
+'============================================================================
+unit 61
+  com='full-plate 6'
+'---full-plate 6 boundary---
+  cuboid 1 12.5077748992512 -25.6713610367747 -2.35 -4.9 34.37686 0 
+'---graphite meat---
+  media 24 1 1
+'---bottom stripe---
+  hole 1 origin x=-10.5047802832865 y=-4.8
+'---top stripe---
+  hole 2 origin x=-11.6507512855956 y=-2.81512
+  boundary 1

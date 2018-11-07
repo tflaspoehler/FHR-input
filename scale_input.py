@@ -47,8 +47,9 @@ class scale_unit_class():
                     self.lines.append(comment_class(line))
                 elif "com" in line.split()[0] and "=" in line.split()[0]:
                     self.lines.append(comment_class(line))
-                elif line.split()[0] == "unit":
+                elif line.split()[0] == "unit" or (line.split()[0] == "global" and line.split()[1] == "unit" ):
                     self.lines.append(unit_class(line))
+                    self.id = self.lines[-1].id
                 elif line.split()[0] == "media":
                     self.lines.append(media_class(line))
                 elif line.split()[0] == "hole":
@@ -114,6 +115,10 @@ def multiple_scale_units(input_file):
     unit_lines.append(len(lines))
     units = []
     for i in range(0, len(unit_lines)-1):
-        units.append(scale_unit_class(lines[unit_lines[i]+1:unit_lines[i+1]+1]))
+        if i == 0:
+            units.append(scale_unit_class(lines[0:unit_lines[i+1]+1]))
+        else:
+            units.append(scale_unit_class(lines[unit_lines[i]+1:unit_lines[i+1]+1]))
+    units.sort(key=lambda x: x.id, reverse=False)
     return units
         
