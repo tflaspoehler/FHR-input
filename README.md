@@ -1,5 +1,7 @@
 # FHR-input
-Generate a SCALE input file for a full-core FHR model with segmented fuel stripes in any arbitrary dimension
+Generate a SCALE input file for a full-core FHR model with segmented fuel stripes in any arbitrary dimension with symmetric depletion zones.
+
+![alt text](core_with_geometry.png)
 
 In order to deplete different regions of the complicated FHR assembly, each region has to be defined by a separate material in the compositions block of the scale input file. Then each portion of the geometry that would like to be depleted separately (whether by plank, stripe, axial, or assembly) must be uniquely defined in the geometry. So the input files become very complicated quickly since they cannot be easily repeated without copying and replacing all of the identifiers. I though this would be safer to do in a python script to keep track of bookkeeping as well as make it more flexible if different partitions of the model would like to be depleted.
 
